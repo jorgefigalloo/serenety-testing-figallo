@@ -1,4 +1,4 @@
-@RegistrarUsuario
+@RegistrarUsuarios
 Feature: Registrar un usuario
 
   @RegistrarUsuario @HappyPath

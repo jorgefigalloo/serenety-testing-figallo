@@ -5,10 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 
 public class ChooseProductTask implements Task {
 
@@ -23,11 +20,10 @@ public class ChooseProductTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(MenClothesPage.ITM_TALLA, isVisible()).forNoMoreThan(8).seconds(),
+                MoveMouse.to(MenClothesPage.ITM_SHIRT),
+                Click.on(MenClothesPage.ITM_SHIRT),
                 Click.on(MenClothesPage.ITM_TALLA),
-                WaitUntil.the(MenClothesPage.ITM_COLOR_PRENDA, isVisible()).forNoMoreThan(8).seconds(),
-                Click.on(MenClothesPage.ITM_COLOR_PRENDA),
-                Click.on(MenClothesPage.BTN_AGREGAR_CARRITO)
+                Click.on(MenClothesPage.ITM_COLOR_PRENDA)
         );
     }
 

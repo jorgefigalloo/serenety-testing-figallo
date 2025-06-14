@@ -7,7 +7,7 @@ Feature: Buscar un producto y agregarlo al carrito
     And busca un producto "<nombreProducto>"
     And selecciona la talla "<talla>" y color "<color>"
     When agrega al carrito
-    Then se actualiza el item <item> del carrito de manera exitosa
+    Then se actualiza el item "<item>" del carrito de manera exitosa
 
     Examples:
       | email                | contrasenia  | nombreProducto | talla | color | item |
