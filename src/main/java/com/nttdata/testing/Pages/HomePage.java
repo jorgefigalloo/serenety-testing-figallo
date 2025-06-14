@@ -13,9 +13,8 @@ public class HomePage extends PageObject {
     public static final Target BTN_SIGN_UP = Target.the("Boton para hacer el registro")
             .located(By.xpath("//a[text()='Create an Account']"));
 
-
-
-
+    public static final Target BTN_SIGN_IN = Target.the("Boton para hacer el inicio se sesion")
+            .located(By.xpath("//a[normalize-space(text())='Sign In']"));
 
 
 //    public static final Target REGISTER_MODAL = Target.the("Modal de registro")

@@ -1,12 +1,10 @@
 package com.nttdata.testing.Tasks;
 
-import com.nttdata.testing.Pages.HomePage;
 import com.nttdata.testing.Pages.RegisterPage;
 import com.nttdata.testing.interactions.ScrollToBottom;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
 

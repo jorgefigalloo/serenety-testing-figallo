@@ -11,7 +11,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.*;
 import net.serenitybdd.screenplay.actions.Click;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
