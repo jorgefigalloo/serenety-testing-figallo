@@ -8,7 +8,6 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.ScrollTo;
 
 
 public class RegistrarUsuario implements Task {
@@ -28,7 +27,7 @@ public class RegistrarUsuario implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(HomePage.BTN_SIGN_UP),
+                //Click.on(HomePage.BTN_SIGN_UP),
                 Enter.theValue(firstName).into(RegisterPage.TXT_FIRST_NAME),
                 Enter.theValue(lastName).into(RegisterPage.TXT_LAST_NAME),
                 Enter.theValue(email).into(RegisterPage.TXT_EMAIL),

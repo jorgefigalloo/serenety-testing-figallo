@@ -24,5 +24,6 @@ public class RegisterPage extends PageObject {
     public static final Target BTN_CREATE = Target.the("create account button")
             .locatedBy("//button[@title='Create an Account']");
 
-
+    public static final Target LBL_ERROR_MESSAGE = Target.the("Mensaje de error al crear usuario")
+            .locatedBy("//div[@data-ui-id='message-error']");
 }
