@@ -12,6 +12,7 @@ Feature: Comprar un producto desde el catálogo
     And completa el formulario con company "<company>", direccion "<direccion>", ciudad "<ciudad>", estado "<estado>", zip "<zip>", pais "<pais>", telefono "<telefono>"
     And hace clic en "Place Order"
     Then ve el mensaje de confirmación "Thank you for your purchase!"
+    And hace clic en el número de orden
 
     Examples:
       | email                   | contrasenia    | nombreProducto        | talla | color | cantidad | company  | direccion        | ciudad | estado | zip  | pais | telefono    |

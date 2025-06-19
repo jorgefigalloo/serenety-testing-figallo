@@ -5,6 +5,14 @@ import org.openqa.selenium.By;
 
 public class CheckoutPage {
 
+    // ... (Mantén todos tus Targets existentes) ...
+
+    // Nuevo Target para el número de la orden/enlace
+    public static final Target ORDER_NUMBER_LINK = Target.the("número de la orden")
+            .located(By.cssSelector(".order-number")); // Usa el selector CSS basado en la clase "order-number"
+
+    // ... (El resto de tus Targets como LOADING_SPINNER) ...
+
     // Botón para agregar nueva dirección
     public static final Target BTN_NEW_ADDRESS = Target.the("botón nueva dirección")
             .located(By.xpath("//span[contains(text(),'New Address')]/ancestor::button"));

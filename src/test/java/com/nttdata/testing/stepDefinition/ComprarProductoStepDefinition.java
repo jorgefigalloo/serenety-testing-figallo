@@ -5,13 +5,12 @@ import io.cucumber.java.en.When;
 import com.nttdata.testing.Tasks.*;
 import com.nttdata.testing.Pages.CheckoutPage;
 import io.cucumber.java.en.*;
-import net.serenitybdd.screenplay.waits.WaitUntil; // Importado para las esperas
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.questions.WebElementQuestion;
 
-// Importaciones estáticas para los matchers de estado de elementos
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
@@ -56,15 +55,6 @@ public class ComprarProductoStepDefinition {
         );
     }
 
-    // EL SIGUIENTE MÉTODO FUE ELIMINADO PORQUE YA NO ES NECESARIO EN EL FLUJO DE LA PRUEBA
-    // Ya que CompletarFormularioCompraTask maneja el avance en el checkout.
-    /*
-    @And("selecciona método de envío predeterminado")
-    public void selectShipping() {
-        theActorInTheSpotlight().attemptsTo(SeleccionarEnvioTask.defaultOption());
-    }
-    */
-
     @And("hace clic en {string}")
     public void clickPlaceOrder(String boton) {
         theActorInTheSpotlight().attemptsTo(ConfirmarCompraTask.confirmar());
@@ -73,17 +63,16 @@ public class ComprarProductoStepDefinition {
     @Then("ve el mensaje de confirmación {string}")
     public void validarConfirmacion(String msg) {
         theActorInTheSpotlight().attemptsTo(
-                // Esperar a que cualquier spinner de carga desaparezca
                 WaitUntil.the(CheckoutPage.LOADING_SPINNER, isNotVisible()).forNoMoreThan(30).seconds(),
-                // Esperar a que el mensaje de confirmación sea visible en la página
                 WaitUntil.the(CheckoutPage.MSG_CONFIRMACION, isVisible()).forNoMoreThan(30).seconds()
         );
         theActorInTheSpotlight().should(
                 seeThat(WebElementQuestion.the(CheckoutPage.MSG_CONFIRMACION), WebElementStateMatchers.isVisible())
         );
-        // Opcional: Si quieres validar que el texto del mensaje es el esperado:
-        // theActorInTheSpotlight().should(
-        //         seeThat(TheText.of(CheckoutPage.MSG_CONFIRMACION), containsString(msg))
-        // );
+    }
+
+    @And("hace clic en el número de orden") // Nuevo paso de definición
+    public void hacerClicEnElNumeroDeOrden() {
+        theActorInTheSpotlight().attemptsTo(ClickOrderNumberTask.clickTheOrderNumber());
     }
 }
