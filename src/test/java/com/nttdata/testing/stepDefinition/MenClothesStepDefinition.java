@@ -19,14 +19,17 @@ import net.serenitybdd.screenplay.actions.MoveMouse;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
+import com.nttdata.testing.Tasks.NavigateTo;
+
 
 public class MenClothesStepDefinition {
 
-    @Given("el {actor} inicia sesion con email {string} y contrasenia {string}")
-    public void elUsuarioIniciaSesionConEmailYContrasenia(Actor actor, String email, String contrasenia) {
-        actor.attemptsTo(NavigateTo.theHomePage());
+    @Given("el usuario inicia sesion con email {string} y contrasenia {string}")
+    public void elUsuarioIniciaSesionConEmailYContrasenia(String email, String contrasenia) {
+        theActorInTheSpotlight().attemptsTo(NavigateTo.theHomePage());
         theActorInTheSpotlight().attemptsTo(LoginTask.withData(email, contrasenia));
     }
+
 
 
     @And("busca un producto {string}")
@@ -46,12 +49,15 @@ public class MenClothesStepDefinition {
         //theActorInTheSpotlight().attemptsTo(ChooseProductTask.withData(talla,string));
     }
 
-    @When("agrega al carrito")
+
+
+    @When("añade el producto al carrito")  // ✅ nuevo texto
     public void agregaAlCarrito() {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(MenClothesPage.BTN_AGREGAR_CARRITO)
         );
     }
+
 
     @Then("se actualiza el item {string} del carrito de manera exitosa")
     public void seActualizaElItemDelCarritoDeManeraExitosa(String cantidad) {
@@ -67,4 +73,6 @@ public class MenClothesStepDefinition {
             throw new RuntimeException(e);
         }
     }
+
+
 }

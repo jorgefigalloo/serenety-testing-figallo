@@ -11,7 +11,7 @@ Feature: Registrar un usuario
 
     Examples:
       | nombre | apellido | email                | contrasenia  |
-      | Romulo | Leon     | abc12344@hotmail.com | Password123& |
+      | Jorge | Figallo     | figallojorge@gmail.com | Password123@ |
 
 
   @RegistrarUsuario @UnhappyPath
@@ -24,6 +24,6 @@ Feature: Registrar un usuario
 
     Examples:
       | nombre | apellido | email                | contrasenia  |
-      | Romulo | Leon     | abc12344@hotmail.com | Password123& |
+      | Jorge | Figallo     | figallojorge@gmail.com | Password123@ |
 
 

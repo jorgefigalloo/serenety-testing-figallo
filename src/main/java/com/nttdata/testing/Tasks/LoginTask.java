@@ -25,6 +25,7 @@ public class LoginTask implements Task {
     }
 
     @Override
+    @SuppressWarnings("unchecked") // Suprime el warning de tipo genérico
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 NavigateTo.theHomePage(),
